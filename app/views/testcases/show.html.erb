@@ -1,0 +1,12 @@
+<h1>Showing selected Testcase</h1>
+<p>
+Title: <%= @testcase.title %>
+</p>
+<p>
+Description: <%= @testcase.description %>
+</p>
+<%= link_to "Edit this Testcase", edit_testcase_path(@testcase) %> |
+
+<%= link_to "Back to Testcase listing", testcases_path %>
+
+<%= link_to 'Delete', testcase_path(@testcase), method: :delete, data: {confirm: "Are you sure?"} %>
