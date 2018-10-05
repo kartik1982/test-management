@@ -1,0 +1,47 @@
+<%= link_to "View all TestSuites", testsuites_path %>
+<div class="container">
+  <div class="row center">
+    <%= link_to new_testcase_path do %>
+    <div class="col-md-3 col-md-offset-1">
+      <div class="thumbnail">
+        <%= image_tag 'testcase.jpg' , :style => "width:150px;height:150px;" %>
+        <div class="caption">
+          <h3>Create Testcase</h3>
+        </div>
+      </div>
+    </div>
+    <% end %>
+    <%= link_to new_testsuite_path do %>
+     <div class="col-md-3">
+      <div class="thumbnail">
+        <%= image_tag 'testsuite.jpg', :style => "width:150px;height:150px;"%>
+        <div class="caption">
+          <h3>Create TestSuite</h3>
+        </div>
+      </div>
+    </div>
+    <% end %>
+  </div>
+    <div class="row center">
+    <%= link_to testcases_path do %>
+     <div class="col-md-3 col-md-offset-1">
+      <div class="thumbnail">
+        <%= image_tag 'testcase.jpg', :style => "width:150px;height:150px;"%>
+        <div class="caption">
+          <h3>View all Testcases</h3>
+        </div>
+      </div>
+    </div>
+    <% end %>
+    <%= link_to testsuites_path do %>
+    <div class="col-md-3">
+      <div class="thumbnail">
+        <%= image_tag 'testsuite.jpg' , :style => "width:150px;height:150px;" %>
+        <div class="caption">
+          <h3>View all TestSuites</h3>
+        </div>
+      </div>
+    </div>
+    <% end %>    
+  </div>
+</div>

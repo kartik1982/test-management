@@ -3,19 +3,19 @@
     <table class="table">
       <thead class="thead-dark">
         <tr>
-          <th scope="col">Testcase ID</th>
-          <th scope="col">Testcase Name</th>
+          <th scope="col">Testsuite ID</th>
+          <th scope="col">Testsuite Name</th>
           <th scope="col">Description</th>
           <th scope="col">Created by</th>
           <th scope="col">Assigned</th>
         </tr>
       </thead>
       <tbody>
-      <% @testcases.each do |testcase| %>
+      <% @testsuites.each do |testsuite| %>
           <tr>
-          <th class="center" scope="row"><%= link_to testcase.id, testcase_path(testcase) %></th>
-          <td class="left"><%= link_to testcase.title, testcase_path(testcase) %> </td>
-          <td><%= truncate(testcase.description, length:50) %></td>
+          <th class="center" scope="row"><%= link_to testsuite.id, testsuite_path(testsuite) %></th>
+          <td class="left"><%= link_to testsuite.title, testsuite_path(testsuite) %> </td>
+          <td><%= truncate(testsuite.description, length:50) %></td>
           <td>Kartik Aiyar</td>
           <td>Kartik Aiyar</td>
         </tr>

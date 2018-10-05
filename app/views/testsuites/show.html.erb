@@ -1,0 +1,14 @@
+<div class="well col-xs-8 col-xs-offset-2">
+  <h3 align="left"><strong>Testsuite Name:</strong> <%= @testsuite.title %></h2>
+  <h3 class="left description"><strong>Description:</strong></h4>
+  <%= simple_format(@testsuite.description) %>
+  <div class="article-actions">
+    <%= link_to "Edit Testsuite", edit_testsuite_path(@testsuite), class: "btn btn-xs btn-primary" %>
+    <%= link_to "Delete Testsuite", testsuite_path(@testsuite), method: :delete, 
+                                        data: { confirm: "Are you sure you want to delete the article?"}, 
+                                        class: "btn btn-xs btn-danger" %>
+    <%= link_to "View all Testsuites", testsuites_path, class: "btn btn-xs btn-success" %>
+
+</div>
+
+</div>
