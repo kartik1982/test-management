@@ -1,20 +1,24 @@
-<h1>Listing all Testcases</h1>
-<p>
-<%= link_to "Create new article", new_testcase_path %>
-</p>
-
-<table>
-<tr>
-<th>Testcase Name</th>
-<th>Test Case Description</th>
-</tr>
-<% @testcases.each do |testcase| %>
-<tr>
-<td><%= testcase.title %></td>
-<td><%= testcase.description %></td>
-<td><%= link_to 'Edit', edit_testcase_path(testcase) %></td>
-<td><%= link_to 'Show', testcase_path(testcase) %></td>
-<td><%= link_to 'Delete', testcase_path(testcase), method: :delete, data: {confirm: "Are you sure?"} %></td>
-</tr>
-<% end %>
-</table>
+<div class="container">
+  <div class="col-xs-10 col-xs-offset-2 well well-lg">
+    <table class="table">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">Testcase ID</th>
+          <th scope="col">Testcase Name</th>
+          <th scope="col">Description</th>
+          <th scope="col">Auther</th>
+        </tr>
+      </thead>
+      <tbody>
+      <% @testcases.each do |testcase| %>
+          <tr>
+          <th scope="row"><%= testcase.id %></th>
+          <td><%= testcase.title %> </td>
+          <td><%= testcase.description %></td>
+          <td>Kartik Aiyar</td>
+        </tr>
+      <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
