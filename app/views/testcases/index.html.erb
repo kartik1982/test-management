@@ -1,6 +1,7 @@
  <% if logged_in? %>
 <div class="container"> 
-<%= render 'testcase', obj: @testcases %>
+  <%= render 'testcase', obj: @testcases %>
+  <div class= "pagination"> <%= will_paginate %> </div> 
 </div>
 <% end %>
 

@@ -1,0 +1,28 @@
+  <div class="col-xs-12 col-xs-offset-0 well well-lg">
+    <table class="table">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">Testsuite Name</th>
+          <th scope="col">Testcase Count</th>
+          <th scope="col">Description</th>
+          <th scope="col">Created by</th>
+          <th scope="col">Created On</th>
+          <th scope="col">Updated On</th>
+          <th scope="col">Assigned To</th>
+        </tr>
+      </thead>
+      <tbody>
+      <% obj.each do |testsuite| %>
+          <tr>
+          <td><%= link_to testsuite.title, testsuite_path(testsuite) %> </td>
+          <td class="center"><%= link_to testsuite.testcases.count, testsuite_path(testsuite) %></td>
+          <td><%= truncate(testsuite.description, length:50) %></td>
+          <td><%= testsuite.user.username if testsuite.user%></td>
+          <td><%= testsuite.created_at.to_date %></td>
+          <td><%= testsuite.updated_at.to_date %></td>
+          <td>Kartik Aiyar</td>
+        </tr>
+      <% end %>
+      </tbody>
+    </table>
+  </div>

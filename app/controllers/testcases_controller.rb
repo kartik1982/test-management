@@ -1,11 +1,14 @@
 class TestcasesController < ApplicationController
+  before_action :set_testcase, only:[:edit, :update, :show, :destroy]
+  before_action :require_user
   def new
     @testcase = Testcase.new
   end
   
   def create
    @testcase = Testcase.new(testcase_params)
-   @testcase.user = User.first #Temporarily adding first user
+   @testcase.user = current_user
+   @testcase.testsuite = Testsuite.first
    if @testcase.save
      flash[:success] ="Testcase Added successfully"
      redirect_to testcase_path(@testcase)
@@ -16,14 +19,14 @@ class TestcasesController < ApplicationController
   end
   
   def show
-    @testcase = Testcase.find(params[:id])
+    
   end
+  
   def edit
-    @testcase = Testcase.find(params[:id])
+    
   end
   
   def update
-    @testcase = Testcase.find(params[:id])
     if @testcase.update(testcase_params)
       flash[:success] = "Testcase updated successfully"
       redirect_to testcase_path(@testcase)
@@ -33,12 +36,10 @@ class TestcasesController < ApplicationController
   end
   
   def index
-#     @testcases = Testcase.all
     @testcases = Testcase.paginate(page: params[:page], per_page: 5)
   end
   
   def destroy
-    @testcase = Testcase.find(params[:id])
     @testcase.destroy
     flash[:danger] = "Testcase deleted successfully"
     redirect_to testcases_path
@@ -46,6 +47,9 @@ class TestcasesController < ApplicationController
   
   private
   def testcase_params
-    params.require(:testcase).permit(:title, :description)
+    params.require(:testcase).permit(:title, :description, :testsuite_id)
+  end
+  def set_testcase
+    @testcase = Testcase.find(params[:id])
   end
 end

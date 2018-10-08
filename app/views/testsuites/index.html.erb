@@ -1,33 +1,6 @@
   <% if logged_in? %>
 <div class="container">
-  <div class="col-xs-12 col-xs-offset-0 well well-lg">
-    <table class="table">
-      <thead class="thead-dark">
-        <tr>
-          <th scope="col">Testsuite ID</th>
-          <th scope="col">Testsuite Name</th>
-          <th scope="col">Description</th>
-          <th scope="col">Created by</th>
-          <th scope="col">Created On</th>
-          <th scope="col">Updated On</th>
-          <th scope="col">Assigned To</th>
-        </tr>
-      </thead>
-      <tbody>
-      <% @testsuites.each do |testsuite| %>
-          <tr>
-          <th class="center" scope="row"><%= link_to testsuite.id, testsuite_path(testsuite) %></th>
-          <td class="left"><%= link_to testsuite.title, testsuite_path(testsuite) %> </td>
-          <td><%= truncate(testsuite.description, length:50) %></td>
-          <td><%= testsuite.user.username if testsuite.user%></td>
-          <td><%= testsuite.created_at.to_date %></td>
-          <td><%= testsuite.updated_at.to_date %></td>
-          <td>Kartik Aiyar</td>
-        </tr>
-      <% end %>
-      </tbody>
-    </table>
-    <div class= "pagination"> <%= will_paginate %> </div> 
-  </div>
+  <%= render 'testsuite', obj: @testsuites %>
+  <div class= "pagination"> <%= will_paginate %> </div> 
 </div>
 <% end %>
