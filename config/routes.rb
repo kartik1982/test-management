@@ -6,10 +6,12 @@ Rails.application.routes.draw do
   # root 'welcome#index'
   root 'pages#home'
   get 'management', to: 'pages#management'
+  get 'testusers', to: 'pages#testusers'
   get 'about', to: 'pages#about'
   
   resources :testcases
   resources :testsuites
+  resources :users
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

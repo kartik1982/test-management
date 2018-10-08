@@ -4,6 +4,7 @@ class TestsuitesController < ApplicationController
   end
   def create
     @testsuite = Testsuite.new(testsuite_params)
+    @testsuite.user = User.first #Temporarily adding first user
     if @testsuite.save
       flash[:success] ="Testsuite created uccessfully"
       redirect_to testsuite_path(@testsuite)
@@ -30,7 +31,8 @@ class TestsuitesController < ApplicationController
   end
   
   def index
-    @testsuites = Testsuite.all
+#     @testsuites = Testsuite.all
+    @testsuites = Testsuite.paginate(page: params[:page], per_page: 5)
   end
   def destroy
     @testsuite = Testsuite.find(params[:id])

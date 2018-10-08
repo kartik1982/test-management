@@ -5,6 +5,7 @@ class TestcasesController < ApplicationController
   
   def create
    @testcase = Testcase.new(testcase_params)
+   @testcase.user = User.first #Temporarily adding first user
    if @testcase.save
      flash[:success] ="Testcase Added successfully"
      redirect_to testcase_path(@testcase)
@@ -32,7 +33,8 @@ class TestcasesController < ApplicationController
   end
   
   def index
-    @testcases = Testcase.all
+#     @testcases = Testcase.all
+    @testcases = Testcase.paginate(page: params[:page], per_page: 5)
   end
   
   def destroy

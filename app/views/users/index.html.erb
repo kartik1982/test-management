@@ -1,0 +1,29 @@
+<div class="container">
+  <div class="col-xs-12 col-xs-offset-0 well well-lg">
+    <table class="table">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">User ID</th>
+          <th scope="col">User Name</th>
+          <th scope="col">User Email ID</th>
+          <th scope="col">Created On</th>
+          <th scope="col">Updated On</th>
+          <th scope="col">Admin</th>
+        </tr>
+      </thead>
+      <tbody>
+      <% @users.each do |user| %>
+          <tr>
+          <th class="center" scope="row"><%= link_to user.id, user_path(user) %></th>
+          <td class="left"><%= link_to user.username, user_path(user) %> </td>
+          <td><%= link_to user.email, user_path(user) %></td>
+          <td><%= user.created_at.to_date %></td>
+          <td><%= user.updated_at.to_date %></td>
+          <td>True</td>
+        </tr>
+      <% end %>
+      </tbody>
+    </table>
+    <div class= "pagination"> <%= will_paginate %> </div> 
+  </div>
+</div>
