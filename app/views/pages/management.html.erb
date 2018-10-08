@@ -1,3 +1,4 @@
+  <% if logged_in? %>
 <div class="container">
   <div class="row center">
     <%= link_to new_testcase_path do %>
@@ -44,3 +45,4 @@
     <% end %>    
   </div>
 </div>
+<% end %>

@@ -1,3 +1,4 @@
+<% if logged_in? %>
 <div class="container">
   <div class="row center">
     <%= link_to '#' do %>
@@ -63,3 +64,9 @@
     <% end %>
   </div>
 </div>
+<% else %>
+  <div class="container center jumbotron">
+    <h1>Riverbed Test Management</h1>
+    <%= link_to "Log in", login_path, class: "btn btn-danger btn-lg btn-xlarge" %>
+  </div>
+<% end %>

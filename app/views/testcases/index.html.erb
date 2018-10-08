@@ -1,33 +1,6 @@
+ <% if logged_in? %>
 <div class="container"> 
-<!--   <div class= "pagination"> <%= will_paginate %> </div>  -->
-  <div class="col-xs-12 col-xs-offset-0 well well-lg">
-    <table class="table">
-      <thead class="thead-dark">
-        <tr>
-          <th scope="col">Testcase ID</th>
-          <th scope="col">Testcase Name</th>
-          <th scope="col">Description</th>
-          <th scope="col">Created by</th>
-          <th scope="col">Created On</th>
-          <th scope="col">Updated On</th>
-          <th scope="col">Assigned To</th>
-        </tr>
-      </thead> 
-      <tbody> 
-      <% @testcases.each do |testcase| %>
-          <tr>
-          <th class="center" scope="row"><%= link_to testcase.id, testcase_path(testcase) %></th>
-          <td class="left"><%= link_to testcase.title, testcase_path(testcase) %> </td>
-          <td><%= truncate(testcase.description, length:50) %></td>
-          <td><%= testcase.user.username if testcase.user%></td>
-          <td><%= testcase.created_at.to_date %></td>
-          <td><%= testcase.updated_at.to_date %></td>
-          <td>Kartik Aiyar</td>
-        </tr>
-      <% end %>
-      </tbody>
-    </table>
-    <div class= "pagination"> <%= will_paginate %> </div> 
-  </div>
+<%= render 'testcase', obj: @testcases %>
 </div>
+<% end %>
 

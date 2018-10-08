@@ -13,57 +13,36 @@ font-weight: bold;
 color: #fff;
 text-decoration: none;
 }
-
+.jumbotron {
+  background-image: asset-url('nature.jpg');
+  background-size: cover;
+  height: 450px;
+}
+.jumbotron h1{
+  color: #fff;
+  text-align: center;
+  margin-bottom: 30px;
+  letter-spacing: -1px;
+  font-weight: bold;
+} 
 .center {
 text-align: center;
 }
 
-.jumbotron {
-
-background-image: asset-url('new_cover_page.png');
-
-background-size: cover;
-
-height: 550px;
-
-}
-
-.jumbotron h1 {
-
-color: #fff;
-
-text-align: center;
-
-margin-bottom: 30px;
-
-letter-spacing: -1px;
-
-font-weight: bold;
-
-}
-
 .btn-xlarge {
-
 font-size: 1.7em;
-
 background-color: black;
-
 }
 
 footer {
-
-margin-top: 45px;
-
-padding-top: 5px;
-
-border-top: 1px solid #eaeaea;
-
-color: #777;
-
+  margin-top: 45px;
+  padding-top: 5px;
+  border-top: 1px solid #eaeaea;
+  color: #777;
 }
 
 footer a:hover {
-color: #222;
+  color: #222;
 }
 
 footer small {

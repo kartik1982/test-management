@@ -9,6 +9,10 @@ Rails.application.routes.draw do
   get 'testusers', to: 'pages#testusers'
   get 'about', to: 'pages#about'
   
+  get 'login', to: 'sessions#new'
+  post 'login', to: 'sessions#create'
+  delete 'logout', to: 'sessions#destroy'
+  
   resources :testcases
   resources :testsuites
   resources :users
