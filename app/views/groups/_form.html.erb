@@ -1,13 +1,13 @@
-<%= render 'shared/errors', obj: @testsuite %>
+<%= render 'shared/errors', obj: @group %>
 <div class='row'>
   <div class='col-xs-12'>
-    <%= form_for(@testsuite, :html=> {class:"form-horizontal", role:"form"}) do |f| %>
+    <%= form_for(@group, :html=> {class:"form-horizontal", role:"form"}) do |f| %>
     <div class="form-group">
       <div class="control-label col-sm-2">
-        <%= f.label :title, "Testsuite Name" %>
+        <%= f.label :name, "Group Name" %>
       </div>
       <div class="col-sm-8">
-        <%= f.text_field :title, class: "form-control", placeholder: "Name of Testsuite", autofocus: true %>
+        <%= f.text_field :name, class: "form-control", placeholder: "Name of Group", autofocus: true %>
       </div>
     </div>
     <div class="form-group">
@@ -15,7 +15,7 @@
         <%= f.label :description %>
       </div>
       <div class="col-sm-8">
-        <%= f.text_area :description, row: 10, class: "form-control", placeholder: "Description for Testsuite" %>
+        <%= f.text_area :description, row: 10, class: "form-control", placeholder: "Description for Group" %>
       </div>
     </div>
     <div class="form-group">
@@ -25,7 +25,7 @@
     </div>
     <% end %>
     <div class="center col-xs-4">
-      <%= link_to "Back to Testsuite listing", testcases_path %>
+      <%= link_to "Back to Group listing", groups_path %>
     </div>
   </div>
 </div>
