@@ -8,7 +8,6 @@ class TestcasesController < ApplicationController
   def create
    @testcase = Testcase.new(testcase_params)
    @testcase.user = current_user
-   @testcase.testsuite = Testsuite.first
    if @testcase.save
      flash[:success] ="Testcase Added successfully"
      redirect_to testcase_path(@testcase)

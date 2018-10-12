@@ -1,5 +1,6 @@
  <% if logged_in? %>
-  <div class="well col-xs-8 col-xs-offset-2">
+<h1 align="center"> Group Details </h1>
+  <div class="well col-xs-10 col-xs-offset-1">
     <h3 align="left"><strong>Group Name:</strong> <%= @group.name %></h2>
     <h3 class="left description"><strong>Description:</strong></h4>
     <%= simple_format(@group.description) %>
@@ -10,5 +11,10 @@
                                           class: "btn btn-xs btn-danger" %>
       <%= link_to "View all Groups", groups_path, class: "btn btn-xs btn-success" %>
   </div>
+    <h4>
+      Devices Assigned to Group
+    </h4>
+    <%= render 'devices/device', obj: @group_devices %>
+    <%= will_paginate @group_devices %> 
 </div>
 <% end %>

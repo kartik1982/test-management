@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   resources :testsuites
   resources :users
   resources :groups
+  resources :devices
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

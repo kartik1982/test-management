@@ -1,0 +1,15 @@
+ <% if logged_in? %>
+  <div class="well col-xs-8 col-xs-offset-2">
+    <h3 align="left"><strong>Device Name:</strong> <%= @device.name %></h2>
+    <h3 align="left"><strong>Device Type:</strong> <%= @device.devicetype %></h2>
+    <h3 align="left"><strong>Device Group:</strong> <%= @device.group.name %></h2>
+    <h3 class="left description"><strong>Description:</strong></h4> <%= @device.description %>
+    <div class="article-actions">
+      <%= link_to "Edit Device", edit_device_path(@device), class: "btn btn-xs btn-primary" %>
+      <%= link_to "Delete Device", device_path(@device), method: :delete, 
+                                          data: { confirm: "Are you sure you want to delete the article?"}, 
+                                          class: "btn btn-xs btn-danger" %>
+      <%= link_to "View all Device", devices_path, class: "btn btn-xs btn-success" %>
+  </div>
+</div>
+<% end %>

@@ -17,7 +17,7 @@ class GroupsController < ApplicationController
   end
   
   def show
-    
+    @group_devices = @group.devices.paginate(page: params[:page], per_page: 5)
   end
   def edit
    

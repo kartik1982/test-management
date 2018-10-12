@@ -1,0 +1,7 @@
+<% if logged_in? %>
+<h1 align="center"> Device list</h1>
+  <div class="container">
+    <%= render 'device', obj: @devices %>
+    <div class= "pagination"> <%= will_paginate %> </div> 
+  </div>
+<% end %>
